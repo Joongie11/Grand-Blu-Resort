@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grand Blu Resort – Book Your Stay</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,600;1,400&family=Tangerine:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">Grand Blu Resort</div>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="pages/rooms.html">Rooms</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+                <div class="language-switcher">
+                    <select id="language-select">
+                        <option value="en">EN</option>
+                        <option value="pl">PL</option>
+                        <option value="ua">UA</option>
+                    </select>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Booking section -->
+        <section class="booking-section">
+            <div class="container booking-bar">
+
+                <!-- Unified date picker -->
+                <div class="input-group">
+                    <label for="date-range">Dates</label>
+                    <input type="text" id="date-range" placeholder="Check-in — Check-out" readonly>
+                </div>
+
+                <!-- Guests and Rooms dropdown -->
+                <div class="input-group guest-selector">
+                    <label>Guests & Rooms</label>
+                    <div class="guest-display" id="guestDisplay">2 Adults, 0 Children, 1 Room</div>
+                    <div class="guest-popup" id="guestPopup">
+                        <div class="guest-row">
+                            <span>Adults</span>
+                            <div class="counter">
+                                <button class="counter-btn" data-target="adults" data-action="decrease">−</button>
+                                <span id="adults-count">2</span>
+                                <button class="counter-btn" data-target="adults" data-action="increase">+</button>
+                            </div>
+                        </div>
+                        <div class="guest-row">
+                            <span>Children</span>
+                            <div class="counter">
+                                <button class="counter-btn" data-target="children" data-action="decrease">−</button>
+                                <span id="children-count">0</span>
+                                <button class="counter-btn" data-target="children" data-action="increase">+</button>
+                            </div>
+                        </div>
+                        <div class="guest-row">
+                            <span>Rooms</span>
+                            <div class="counter">
+                                <button class="counter-btn" data-target="rooms" data-action="decrease">−</button>
+                                <span id="rooms-count">1</span>
+                                <button class="counter-btn" data-target="rooms" data-action="increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn">BOOK NOW</button>
+            </div>
+        </section>
+
+
+
+
+        <!--  HERO IMAGE -->
+        <section class="hero">
+            <div class="overlay">
+                <div class="container">
+                    <!-- Optional content -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About section -->
+        <section class="about-resort" id="about">
+            <div class="container about-content">
+                <div class="about-text">
+                    <h2>Welcome to Grand Blu Resort</h2>
+                    <p>
+                        Nestled along the sparkling coastline, Grand Blu Resort offers an unparalleled blend of
+                        luxury,
+                        elegance, and seaside serenity. Designed to inspire awe and comfort, our rooms and suites
+                        are
+                        crafted for those who demand the best.
+                    </p>
+                    <p>
+                        Whether you're seeking a romantic escape or a family retreat, you'll find your perfect
+                        getaway
+                        here — wrapped in hues of deep blue and warm light.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features section -->
+        <section class="features-section">
+            <div class="feature-block">
+                <div class="feature-image" style="background-image: url('assets/images/beach.png');"></div>
+                <div class="feature-text">
+                    <h3>Prime Location</h3>
+                    <p>Enjoy direct access to pristine beaches and panoramic sea views right from your suite.</p>
+                </div>
+            </div>
+
+            <div class="feature-block reverse">
+                <div class="feature-image" style="background-image: url('assets/images/service.png');"></div>
+                <div class="feature-text">
+                    <h3>World-Class Service</h3>
+                    <p>From personal butlers to curated experiences, every stay is tailored to you.</p>
+                </div>
+            </div>
+
+            <div class="feature-block">
+                <div class="feature-image" style="background-image: url('assets/images/dining.png');"></div>
+                <div class="feature-text">
+                    <h3>Gourmet Dining</h3>
+                    <p>Indulge in signature Mediterranean cuisine crafted by our renowned chefs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Amenities section -->
+        <section class="amenities">
+            <div class="container">
+                <h2>Unforgettable Experiences</h2>
+                <div class="amenities-grid">
+                    <div class="amenity">
+                        <img src="assets/images/spa.jpg" alt="Spa">
+                        <h3>Spa & Wellness</h3>
+                        <p>Rejuvenate at our world-class spa with ocean-view massage rooms and holistic therapies.
+                        </p>
+                    </div>
+                    <div class="amenity">
+                        <img src="assets/images/pool.jpg" alt="Infinity Pool">
+                        <h3>Infinity Pools</h3>
+                        <p>Swim above the horizon in our heated infinity pools overlooking the endless sea.</p>
+                    </div>
+                    <div class="amenity">
+                        <img src="assets/images/yoga.jpg" alt="Activities">
+                        <h3>Daily Activities</h3>
+                        <p>Enjoy daily yoga, diving excursions, and curated tours of the coast.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Testimonials slider -->
+        <section class="testimonials-slider">
+            <div class="container">
+                <h2>What Our Guests Say</h2>
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide active">
+                            <p>“Absolutely breathtaking! The room, the view, the service — everything was
+                                top-notch.”</p>
+                            <h4>— Isabella R., Italy</h4>
+                        </div>
+                        <div class="slide">
+                            <p>“The spa was heavenly and the food unforgettable. A true paradise by the sea.”</p>
+                            <h4>— Mark T., UK</h4>
+                        </div>
+                        <div class="slide">
+                            <p>“I travel often, but this place has something magical. Thank you for an unforgettable
+                                experience.”</p>
+                            <h4>— Yuki N., Japan</h4>
+                        </div>
+                    </div>
+                    <div class="slider-buttons">
+                        <button class="prev">‹</button>
+                        <button class="next">›</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to action -->
+        <section class="cta-booking">
+            <div class="cta-overlay">
+                <div class="cta-content">
+                    <h2>Book Your Dream Escape</h2>
+                    <p>Let the sea set you free — reserve your stay now and embrace coastal elegance.</p>
+                    <a href="pages/rooms.html" class="btn btn-outline-light">View Rooms</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container footer-content">
+                <div class="footer-logo">
+                    <h3>Grand Blu Resort</h3>
+                    <p>Where elegance meets the sea.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="rooms.html">Rooms</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>123 Ocean Drive, Santorini</p>
+                    <p>+30 123 456 789</p>
+                    <p>info@grandblu.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Grand Blu Resort. All rights reserved. | <a href="#">Privacy Policy</a></p>
+            </div>
+        </footer>
+
+    </main>
+    <!-- Flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- ТВОЙ СКРИПТ -->
+    <script src="js/index.js"></script>
+
+
+</body>
+
+</html>
