@@ -1,27 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-function Header() {
+function Hero() {
   return (
-    <header className="header">
-      <div className="container">
-        <div className="logo">Grand Blu Resort</div>
-        <nav className="nav">
-          <Link to="/">Home</Link>
-          <Link to="/rooms">Rooms</Link>
-          <Link to="/contact">Contact</Link>
-          <Link to="/login">Login</Link>
-          <div className="language-switcher">
-            <select id="language-select">
-              <option value="en">EN</option>
-              <option value="pl">PL</option>
-              <option value="ua">UA</option>
-            </select>
-          </div>
-        </nav>
+    <section className="hero">
+      <div className="overlay">
+        <div className="container">
+        </div>
       </div>
-    </header>
+    </section>
   );
 }
 
-export default Header;
+export default Hero;

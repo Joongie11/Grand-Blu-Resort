@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,600;1,400&family=Tangerine:wght@700&display=swap');
+
+@import url('https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css');
+
 /* ========== Global Reset & Base Styles ========== */
 * {
     margin: 0;
@@ -100,6 +104,14 @@ body {
 }
 
 /* ========== Booking Section ========== */
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected.inRange {
+    background: #003C71 !important;
+    color: #fff !important;
+}
+
 .booking-section {
     padding: 40px 0;
     background-color: #ffffff;
@@ -596,7 +608,7 @@ body {
 
 .footer-social .social-icons {
     display: flex;
-    gap: 15px;
+    gap: 25px;
 }
 
 .footer-social i {

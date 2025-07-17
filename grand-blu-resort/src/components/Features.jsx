@@ -1,4 +1,7 @@
 import React from 'react';
+import beachImage from '../assets/images/beach.png';
+import serviceImage from '../assets/images/service.png';
+import diningImage from '../assets/images/dining.png';
 
 function Features() {
   return (
@@ -6,7 +9,7 @@ function Features() {
       <div className="feature-block">
         <div
           className="feature-image"
-          style={{ backgroundImage: `url(/assets/images/beach.png)` }}
+          style={{ backgroundImage: `url(${beachImage})` }}
         ></div>
         <div className="feature-text">
           <h3>Prime Location</h3>
@@ -17,7 +20,7 @@ function Features() {
       <div className="feature-block reverse">
         <div
           className="feature-image"
-          style={{ backgroundImage: `url(/assets/images/service.png)` }}
+          style={{ backgroundImage: `url(${serviceImage})` }}
         ></div>
         <div className="feature-text">
           <h3>World-Class Service</h3>
@@ -28,7 +31,7 @@ function Features() {
       <div className="feature-block">
         <div
           className="feature-image"
-          style={{ backgroundImage: `url(/assets/images/dining.png)` }}
+          style={{ backgroundImage: `url(${diningImage})` }}
         ></div>
         <div className="feature-text">
           <h3>Gourmet Dining</h3>
@@ -40,3 +43,4 @@ function Features() {
 }
 
 export default Features;
+

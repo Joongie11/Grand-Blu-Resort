@@ -22,9 +22,9 @@ function Footer() {
 
         <div className="footer-contact">
           <h4>Contact Us</h4>
-          <p>123 Ocean Drive, Santorini</p>
-          <p>+30 123 456 789</p>
-          <p>info@grandblu.com</p>
+          <p>123 Ocean Drive, Paradise Island</p>
+          <p>+1 (555) 123-4567</p>
+          <p>info@grandbluresort.com</p>
         </div>
 
         <div className="footer-social">
