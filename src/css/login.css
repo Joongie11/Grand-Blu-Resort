@@ -1,0 +1,74 @@
+/* src/css/login.css */
+
+.login-page {
+    max-width: 480px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.login-form {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.login-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.login-form input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.login-form input:focus {
+    border-color: #1e88e5;
+    outline: none;
+}
+
+.login-form .btn {
+    padding: 12px;
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-form .btn:hover {
+    background: linear-gradient(135deg, #0096c7, #48cae4);
+}
+
+.login-note {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.login-note a {
+    color: #0077b6;
+    text-decoration: none;
+}
+
+.login-note a:hover {
+    text-decoration: underline;
+}
