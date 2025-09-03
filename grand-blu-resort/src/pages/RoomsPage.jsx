@@ -1,126 +1,121 @@
-import React from 'react';
-import '../css/rooms.css';
+import React, { useState, useEffect } from "react";
+import "../css/rooms.css";
+import roomsData from "../data/rooms";
+import { Link, useLocation } from "react-router-dom";
 
 function RoomsPage() {
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+
+  const checkIn = params.get("check_in");
+  const checkOut = params.get("check_out");
+
+  const initialGuests =
+    parseInt(params.get("adults") || "1") +
+    parseInt(params.get("children") || "0");
+  const initialRooms = parseInt(params.get("rooms") || "1");
+
+  const [guestFilter, setGuestFilter] = useState(initialGuests);
+  const [roomsFilter, setRoomsFilter] = useState(initialRooms);
+  const [filteredRooms, setFilteredRooms] = useState([]);
+
+  useEffect(() => {
+    const filtered = roomsData.filter(
+      (room) =>
+        room.filters.guests >= guestFilter &&
+        (room.filters.rooms || 1) >= roomsFilter
+    );
+    setFilteredRooms(filtered);
+  }, [guestFilter, roomsFilter]);
+
   return (
-    <>
+    <main className="container">
+      <h1 className="page-title">Available Rooms</h1>
 
-      {/* Page content */}
-      <main className="container">
-        <h1 className="page-title">Available Rooms</h1>
-
-        {/* 1. Guest Room */}
-        <div className="room-item">
-          <div className="room-image">
-          <img src="/images/guest-room.jpg" />
-
+      <div className="booking-summary interactive">
+        {checkIn && checkOut && (
+          <div className="booking-dates">
+            📅 {checkIn} → {checkOut}
           </div>
-          <div className="room-info">
-            <h2 className="room-title">Guest Room</h2>
-            <p className="room-description">
-              Bright and peaceful room with soft blue accents and minimalist interior, perfect for solo travelers or couples.
-            </p>
-            <div className="room-specs">
-              <span>🛏 1 Queen Bed</span>
-              <span>📐 25 m²</span>
-              <span>🪟 Garden View</span>
-            </div>
-            <div className="room-actions">
-              <a href="#" className="btn-outline">View Details</a>
-              <a href="#" className="btn">Book Now</a>
-            </div>
-          </div>
+        )}
+        <div className="booking-guests">
+          👤{" "}
+          <input
+            type="number"
+            min="1"
+            value={guestFilter}
+            onChange={(e) =>
+              setGuestFilter(Math.max(1, parseInt(e.target.value) || 1))
+            }
+            style={{
+              width: "60px",
+              padding: "4px 6px",
+              fontSize: "16px",
+              borderRadius: "6px",
+              border: "1px solid #ccc",
+              marginLeft: "5px",
+              marginRight: "5px",
+            }}
+          />
+          Guest{guestFilter > 1 ? "s" : ""}
         </div>
-
-        {/* 2. Family Room */}
-        <div className="room-item">
-          <div className="room-image">
-            <img src="/images/family-room.jpg" alt="Family Room" />
-          </div>
-          <div className="room-info">
-            <h2 className="room-title">Family Room</h2>
-            <p className="room-description">
-              Spacious and sunlit, featuring soft textiles, a modern bath, and direct access to a private balcony.
-            </p>
-            <div className="room-specs">
-              <span>🛏 2 Double Beds</span>
-              <span>👨‍👩‍👧 Up to 4 Guests</span>
-              <span>📺 Smart TV + Bathtub</span>
-            </div>
-            <div className="room-actions">
-              <a href="#" className="btn-outline">View Details</a>
-              <a href="#" className="btn">Book Now</a>
-            </div>
-          </div>
+        <div className="booking-rooms">
+          🛏{" "}
+          <input
+            type="number"
+            min="1"
+            value={roomsFilter}
+            onChange={(e) =>
+              setRoomsFilter(Math.max(1, parseInt(e.target.value) || 1))
+            }
+            style={{
+              width: "60px",
+              padding: "4px 6px",
+              fontSize: "16px",
+              borderRadius: "6px",
+              border: "1px solid #ccc",
+              marginLeft: "5px",
+              marginRight: "5px",
+            }}
+          />
+          Room{roomsFilter > 1 ? "s" : ""}
         </div>
+      </div>
 
-        {/* 3. Sea View Suite */}
-        <div className="room-item">
-          <div className="room-image">
-            <img src="/images/sea-view-suite.jpg" alt="Sea View Suite" />
-          </div>
-          <div className="room-info">
-            <h2 className="room-title">Sea View Suite</h2>
-            <p className="room-description">
-              Wake up to a breathtaking panoramic view of the sea, with direct access to a spacious private terrace and loungers.
-            </p>
-            <div className="room-specs">
-              <span>🛏 1 King Bed</span>
-              <span>🌅 Sea View</span>
-              <span>🛁 Outdoor Pool Access</span>
+      {filteredRooms.length > 0 ? (
+        filteredRooms.map((room) => (
+          <div className="room-item" key={room.id}>
+            <div className="room-image">
+              <img src={room.image} alt={room.name} />
             </div>
-            <div className="room-actions">
-              <a href="#" className="btn-outline">View Details</a>
-              <a href="#" className="btn">Book Now</a>
-            </div>
-          </div>
-        </div>
-
-        {/* 4. Premium Room with Terrace */}
-        <div className="room-item">
-          <div className="room-image">
-            <img src="/images/premium-terrace.jpg" alt="Premium Room with Terrace" />
-          </div>
-          <div className="room-info">
-            <h2 className="room-title">Premium Room with Terrace</h2>
-            <p className="room-description">
-              Elevated modern room with elegant coastal colors, floor-to-ceiling windows, and a private furnished balcony.
-            </p>
-            <div className="room-specs">
-              <span>🛏 1 King Bed</span>
-              <span>🌿 Private Balcony</span>
-              <span>☕ Espresso Machine</span>
-            </div>
-            <div className="room-actions">
-              <a href="#" className="btn-outline">View Details</a>
-              <a href="#" className="btn">Book Now</a>
+            <div className="room-info">
+              <h2 className="room-title">{room.name}</h2>
+              <p className="room-description">{room.description}</p>
+              <div className="room-specs">
+                {room.specs.map((spec, index) => (
+                  <span key={index}>{spec}</span>
+                ))}
+              </div>
+              <div className="room-actions">
+                <Link to={`/room/${room.id}`} className="btn-outline">
+                  View Details
+                </Link>
+                <Link
+                  to={`/book/${room.id}?check_in=${checkIn}&check_out=${checkOut}&adults=${guestFilter}&children=0&rooms=${roomsFilter}`}
+                  className="btn"
+                >
+                  Book Now
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-
-        {/* 5. Luxury Executive Suite */}
-        <div className="room-item">
-          <div className="room-image">
-            <img src="/images/executive-suite.jpg" alt="Luxury Executive Suite" />
-          </div>
-          <div className="room-info">
-            <h2 className="room-title">Luxury Executive Suite</h2>
-            <p className="room-description">
-              Spacious open-plan suite with panoramic ocean views, stylish decor, and a work-friendly lounge corner.
-            </p>
-            <div className="room-specs">
-              <span>🛏 King + Sofa Bed</span>
-              <span>🖥 Desk & Lounge Area</span>
-              <span>🌇 Oceanfront Balcony</span>
-            </div>
-            <div className="room-actions">
-              <a href="#" className="btn-outline">View Details</a>
-              <a href="#" className="btn">Book Now</a>
-            </div>
-          </div>
-        </div>
-      </main>
-    </>
+        ))
+      ) : (
+        <p className="no-rooms-message">
+          No rooms found matching your guest and room criteria.
+        </p>
+      )}
+    </main>
   );
 }
 

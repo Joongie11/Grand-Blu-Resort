@@ -651,3 +651,50 @@ body {
         justify-content: center;
     }
 }
+
+.user-menu {
+    position: relative;
+    margin-left: 24px;
+}
+
+.user-icon {
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    min-width: 180px;
+    padding: 8px 0;
+    z-index: 999;
+}
+
+.dropdown-menu a,
+.dropdown-menu button {
+    all: unset;
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Lora', serif;
+    color: #2e2e2e;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+    background-color: #f1f1f1;
+    color: #2e2e2e;
+}

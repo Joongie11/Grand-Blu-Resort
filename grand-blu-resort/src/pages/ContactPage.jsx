@@ -1,27 +1,37 @@
-// src/pages/ContactPage.jsx
-import React from 'react';
-import '../css/contact.css'; 
+import React from "react";
+import "../css/contact.css";
+import useTranslation from "../i18n/useTranslation";
 
 function ContactPage() {
+  const { t } = useTranslation();
+
   return (
     <main className="contact-page container">
-      <h1 className="page-title">Contact Us</h1>
+      <h1 className="page-title">{t("contactTitle")}</h1>
 
       <div className="contact-wrapper">
         <section className="contact-info">
-          <h2>Our Information</h2>
-          <p><strong>Address:</strong> 123 Ocean Drive, Paradise Island</p>
-          <p><strong>Email:</strong> info@grandbluresort.com</p>
-          <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+          <h2>{t("contactInfoTitle")}</h2>
+          <p>
+            <strong>{t("addressLabel")}:</strong> {t("footerAddress")}
+          </p>
+          <p>
+            <strong>{t("emailLabel")}:</strong> {t("footerEmail")}
+          </p>
+          <p>
+            <strong>{t("phoneLabel")}:</strong> {t("footerPhone")}
+          </p>
         </section>
 
         <section className="contact-form">
-          <h2>Send us a message</h2>
+          <h2>{t("contactFormTitle")}</h2>
           <form>
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit" className="btn">Send Message</button>
+            <input type="text" placeholder={t("contactFormName")} required />
+            <input type="email" placeholder={t("contactFormEmail")} required />
+            <textarea rows="5" placeholder={t("contactFormMessage")} required />
+            <button type="submit" className="btn">
+              {t("contactFormButton")}
+            </button>
           </form>
         </section>
       </div>

@@ -1,10 +1,14 @@
-import React from 'react';
+import React from "react";
+import "../css/notfound.css";
+import useTranslation from "../i18n/useTranslation";
 
 function NotFound() {
+  const { t } = useTranslation();
+
   return (
-    <div style={{ padding: '100px', textAlign: 'center' }}>
-      <h2>404 – Page Not Found</h2>
-      <p>Looks like you got lost on the beach 🌴</p>
+    <div className="not-found-container">
+      <h2 className="not-found-title">{t("notFound.title")}</h2>
+      <p className="not-found-text">{t("notFound.text")}</p>
     </div>
   );
 }

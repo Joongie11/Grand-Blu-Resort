@@ -1,0 +1,41 @@
+.thanks-page {
+    text-align: center;
+    padding: 80px 20px;
+    font-family: 'Lora', serif;
+}
+
+.thanks-page h1 {
+    font-family: 'Great Vibes', serif;
+    font-size: 48px;
+    color: #003C71;
+    margin-bottom: 20px;
+}
+
+.thanks-page p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.booking-summary {
+    text-align: left;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #dce3ea;
+    border-radius: 12px;
+    background-color: #f9fcff;
+    font-family: 'Lora', serif;
+}
+
+.booking-summary h2 {
+    font-size: 22px;
+    color: #003C71;
+    margin-bottom: 15px;
+}
+
+.booking-summary p {
+    margin: 8px 0;
+    font-size: 16px;
+    color: #333;
+}
